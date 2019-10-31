@@ -182,13 +182,26 @@ cancel_user_registration GET    /users/cancel(.:format)        devise/registrati
                          DELETE /users(.:format)               devise/registrations#destroy
                          POST   /users(.:format)               devise/registrations#create
                    todos GET    /todos(.:format)               todos#index
+                    - Lists all TODOs regardless of who they were created by
+                    
                          POST   /todos(.:format)               todos#create
+                    - Creates a new TODO and redirects to the TODO page.
+                    
                 new_todo GET    /todos/new(.:format)           todos#new
+                    - Get request to load create todo form
+
                edit_todo GET    /todos/:id/edit(.:format)      todos#edit
+                    - GET request to load edit form
+
                     todo GET    /todos/:id(.:format)           todos#show
+                    - Show details of a particular todo
+
                          PATCH  /todos/:id(.:format)           todos#update
+                              - Update a particulat todo
                          PUT    /todos/:id(.:format)           todos#update
+                              - Update a particulat todo
                          DELETE /todos/:id(.:format)           todos#destroy
+                              - Delete a particulat TODO
                     root GET    /                              todos#index
 ```
 ## Mapping / Authorization Decorators
